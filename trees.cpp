@@ -11,20 +11,34 @@ void trees::insert(int data)
     temp->data = data;
     temp->left_ptr = temp->right_ptr = nullptr;
     if (root == nullptr)
+    {
         root = temp;
+        return;
+    }
     else
     {
         node *curr = root;
+        node *curr1 = nullptr;
         while (curr != nullptr)
         {
-            if (curr->data < temp->data)
-                curr = curr->left_ptr;
-            else
+            curr1 = curr;
+            if (curr->data < data)
             {
                 curr = curr->right_ptr;
             }
+            else
+            {
+                curr = curr->left_ptr;
+            }
         }
-        curr = temp;
+        if (curr1->data < data)
+        {
+            curr1->right_ptr = temp;
+        }
+        else
+        {
+            curr1->left_ptr = temp;
+        }
     }
 }
 
