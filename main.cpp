@@ -3,7 +3,7 @@
 int main()
 {
     trees tree;
-    int arr[6] = {10, 20, 33, 34, 29, 20};
+    int arr[6] = {10, 20, 33, 34, 29, 26};
     for (int i = 0; i < 6; i++)
     {
         tree.insert(arr[i]);
