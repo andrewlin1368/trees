@@ -10,6 +10,8 @@ int main()
     }
 
     tree.display();
-
+    tree.remove(tree.getroot(),26);
+    cout<<"Removed 26\n";
+    tree.display();
     return 0;
 }
