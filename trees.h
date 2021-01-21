@@ -24,6 +24,7 @@ public:
     void postorder(node *curr);
     void inorder(node *curr);
     void display();
+    node *remove(node *curr, int data);
 };
 
 #endif
