@@ -79,3 +79,23 @@ void trees::display()
     cout << "\nInorder: ";
     inorder(curr);
 }
+
+node *trees::remove(node *curr, int data)
+{
+    if (root == nullptr)
+        return root;
+    else
+    {
+        if (curr->data > data)
+            curr->left_ptr = remove(curr->left_ptr, data);
+        else if (curr->data < data)
+            curr->right_ptr = remove(curr->right_ptr, data);
+        else{
+            if(curr->left_ptr==nullptr&&curr->right_ptr==nullptr){
+                curr=nullptr;
+                delete curr;
+            }
+        }
+    }
+    return curr;
+}
