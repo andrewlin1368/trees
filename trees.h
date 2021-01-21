@@ -24,6 +24,7 @@ public:
     void postorder(node *curr);
     void inorder(node *curr);
     void display();
+    node* getroot();
 };
 
 #endif
