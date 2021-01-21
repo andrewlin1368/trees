@@ -103,6 +103,18 @@ node *trees::remove(node *curr, int data)
                 curr = nullptr;
                 delete curr;
             }
+            else if (curr->left_ptr != nullptr && curr->right_ptr == nullptr)
+            {
+                node *temp = curr;
+                curr = curr->left_ptr;
+                delete temp;
+            }
+            else if (curr->right_ptr != nullptr && curr->left_ptr == nullptr)
+            {
+                node *temp = curr;
+                curr = curr->right_ptr;
+                delete temp;
+            }
         }
     }
     return curr;
