@@ -115,6 +115,22 @@ node *trees::remove(node *curr, int data)
                 curr = curr->right_ptr;
                 delete temp;
             }
+            else
+            {
+                node *temp = curr->right_ptr;
+                if (temp->left_ptr == nullptr && temp->right_ptr == nullptr)
+                {
+                    curr->data = temp->data;
+                    remove(temp, temp->data);
+                }
+                else
+                {
+                    while (temp->left_ptr != nullptr)
+                        temp = temp->left_ptr;
+                    curr->data = temp->data;
+                    remove(temp, temp->data);
+                }
+            }
         }
     }
     return curr;
